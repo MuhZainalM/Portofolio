@@ -141,7 +141,7 @@ export default function PortfolioWebsite() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-[#BDBDBD] max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-white drop-shadow-lg max-w-3xl mx-auto leading-relaxed"
           >
             Fresh Graduate in Communication Science with practical experience in broadcast production, live streaming, videography, replay operation, and video editing. Experienced in supporting university productions and national sports events while working collaboratively in professional production teams.
           </motion.p>
@@ -162,7 +162,7 @@ export default function PortfolioWebsite() {
           >
             SELECTED <span className="text-[#E10613]">WORKS</span>
           </motion.h2>
-          <p className="text-[#BDBDBD] mt-4 tracking-wide text-sm animate-pulse">
+         <p className="text-white drop-shadow-lg mt-4 tracking-wide text-sm animate-pulse">
             Swipe / Geser untuk melihat karya ➜
           </p>
         </div>
@@ -223,7 +223,7 @@ export default function PortfolioWebsite() {
       <section id="contact" className="w-full bg-[#111111] py-16 border-t border-[#222]">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">Let's Work <span className="text-[#E10613]">Together</span></h2>
-          <p className="text-[#BDBDBD] mb-10 max-w-xl mx-auto">
+          <p className="text-white drop-shadow-lg mb-10 max-w-xl mx-auto">
             Tertarik untuk berkolaborasi dalam produksi video, live streaming, atau project broadcast selanjutnya? Mari diskusikan ide Anda!
           </p>
           
@@ -239,7 +239,7 @@ export default function PortfolioWebsite() {
               <span>@mnalm_7</span>
             </a>
             {/* Lokasi */}
-            <div className="flex items-center gap-3 text-[#BDBDBD]">
+            <div className="flex items-center gap-3 text-white drop-shadow-md">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
               <span>Cirebon, Jawa Barat</span>
             </div>
