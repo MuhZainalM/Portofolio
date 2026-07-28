@@ -28,19 +28,18 @@ export default function PortfolioWebsite() {
   };
 
   return (
-    // Wrapper utama
-    <div className="bg-[#080808] min-h-screen text-white font-inter relative">
+    // Wrapper utama (Hapus warna bg-[#080808] agar tembus pandang ke gambar)
+    <div className="min-h-screen text-white font-inter relative z-0">
       
-      {/* --- TAMBAHAN 1: BACKGROUND GAMBAR GELAP --- */}
-      {/* Ganti 'bg-gelap.jpg' dengan nama file fotomu yang asli */}
+      {/* --- BACKGROUND GAMBAR GELAP (DIPAKSA PALING BELAKANG) --- */}
       <div 
-        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat -z-20 opacity-30"
         style={{ backgroundImage: "url('/Portofolio/bg.jpg')" }}
       />
-      {/* Lapisan hitam tambahan agar teks tetap terbaca jelas */}
-      <div className="fixed inset-0 z-0 bg-black/40" />
+      {/* Lapisan hitam tambahan agar teks di depan tetap kontras */}
+      <div className="fixed inset-0 w-full h-full bg-black/40 -z-10" />
 
-      {/* --- TAMBAHAN 2: MENU NAVIGASI (NAVBAR) MENEMPEL DI ATAS --- */}
+      {/* --- MENU NAVIGASI (NAVBAR) --- */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/80 backdrop-blur-md border-b border-[#222] py-4">
         <div className="container mx-auto px-6 flex justify-center gap-6 md:gap-12 text-sm md:text-base font-medium">
           <a href="#home" className="hover:text-[#E10613] transition-colors cursor-pointer">Beranda</a>
