@@ -1,6 +1,10 @@
 'use client';
+
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/media-has-caption */
+
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 export default function MattisPremiumPortfolio() {
   // Smooth scroll logic untuk menu navigasi
@@ -23,13 +27,13 @@ export default function MattisPremiumPortfolio() {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
-  // Preset animasi elegan
-  const fadeUp = {
+  // Preset animasi elegan dengan tipe Variants (agar TypeScript tidak cerewet)
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -150,7 +154,7 @@ export default function MattisPremiumPortfolio() {
             className="flex flex-col justify-end text-lg md:text-2xl font-medium leading-tight"
           >
             <p className="mb-8">
-              PEOPLE DECIDE IF THEY TRUST YOUR CONTENT BEFORE THEY HEAR A WORD OF IT. THAT'S NOT A METAPHOR. VISUAL CREDIBILITY FORMS ALMOST INSTANTLY.
+              PEOPLE DECIDE IF THEY TRUST YOUR CONTENT BEFORE THEY HEAR A WORD OF IT. THAT&apos;S NOT A METAPHOR. VISUAL CREDIBILITY FORMS ALMOST INSTANTLY.
             </p>
             <div className="w-48 h-64 relative border-2 border-[#050505] overflow-hidden">
                <img 
@@ -205,7 +209,7 @@ export default function MattisPremiumPortfolio() {
             <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, delay: 0.2 }}
+              viewport={{ once: true }} 
               variants={fadeUp}
               className="relative aspect-square md:aspect-[4/3] group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between"
             >
@@ -260,7 +264,7 @@ export default function MattisPremiumPortfolio() {
             className="flex gap-8 mt-16 text-sm font-medium tracking-widest uppercase text-[#888]"
           >
             <a href="https://instagram.com/mnalm_7/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
           </motion.div>
         </div>
       </section>
