@@ -175,7 +175,7 @@ export default function PortfolioWebsite() {
           {/* VIDEO 2: STREAMING */}
           <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222]">
             <video 
-              src="/streaming.mp4" 
+              src="/Portofolio/streaming.mp4" 
               className="absolute inset-0 w-full h-full object-cover"
               controls
               preload="metadata"
