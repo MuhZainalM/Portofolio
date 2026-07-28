@@ -31,6 +31,25 @@ export default function PortfolioWebsite() {
     // Wrapper utama
     <div className="bg-[#080808] min-h-screen text-white font-inter relative">
       
+      {/* --- TAMBAHAN 1: BACKGROUND GAMBAR GELAP --- */}
+      {/* Ganti 'bg-gelap.jpg' dengan nama file fotomu yang asli */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{ backgroundImage: "url('/Portofolio/bg.jpg')" }}
+      />
+      {/* Lapisan hitam tambahan agar teks tetap terbaca jelas */}
+      <div className="fixed inset-0 z-0 bg-black/40" />
+
+      {/* --- TAMBAHAN 2: MENU NAVIGASI (NAVBAR) MENEMPEL DI ATAS --- */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/80 backdrop-blur-md border-b border-[#222] py-4">
+        <div className="container mx-auto px-6 flex justify-center gap-6 md:gap-12 text-sm md:text-base font-medium">
+          <a href="#home" className="hover:text-[#E10613] transition-colors cursor-pointer">Beranda</a>
+          <a href="#about" className="hover:text-[#E10613] transition-colors cursor-pointer">My Profile</a>
+          <a href="#portfolio" className="hover:text-[#E10613] transition-colors cursor-pointer">Foto & Video</a>
+          <a href="#contact" className="hover:text-[#E10613] transition-colors cursor-pointer">Kontak</a>
+        </div>
+      </nav>
+
       {/* =========================================
           1. HERO SECTION (Sampul Depan)
       ========================================= */}
