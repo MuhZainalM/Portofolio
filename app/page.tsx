@@ -1,257 +1,269 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
 
-export default function PortfolioWebsite() {
-  const [showTopBtn, setShowTopBtn] = useState(false);
-
+export default function MattisPremiumPortfolio() {
+  // Smooth scroll logic untuk menu navigasi
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setShowTopBtn(true);
-      } else {
-        setShowTopBtn(false);
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a');
+      if (!link) return;
+      
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const section = document.querySelector(href);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+  // Preset animasi elegan
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
   };
 
   return (
-    <div className="min-h-screen text-white font-inter relative z-0 selection:bg-[#E10613] selection:text-white">
+    <div className="bg-[#050505] min-h-screen text-[#EAEAEA] font-sans selection:bg-[#FF3333] selection:text-white overflow-x-hidden">
       
       {/* =========================================
-          BACKGROUND & NAVBAR GLOBAL
+          GLOBAL NAVBAR (EXECUTIVE STYLE)
       ========================================= */}
-      <div 
-        className="fixed inset-0 w-full h-full bg-cover bg-center bg-no-repeat -z-20 opacity-30"
-        style={{ backgroundImage: "url('/Portofolio/bg-gelap.jpg')" }}
-      />
-      <div className="fixed inset-0 w-full h-full bg-black/50 -z-10" />
-
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#080808]/80 backdrop-blur-md border-b border-[#222] py-4">
-        <div className="container mx-auto px-6 flex justify-center gap-6 md:gap-12 text-sm md:text-base font-medium">
-          <a href="#home" className="hover:text-[#E10613] transition-colors cursor-pointer">Beranda</a>
-          <a href="#about" className="hover:text-[#E10613] transition-colors cursor-pointer">My Profile</a>
-          <a href="#portfolio" className="hover:text-[#E10613] transition-colors cursor-pointer">Foto & Video</a>
-          <a href="#contact" className="hover:text-[#E10613] transition-colors cursor-pointer">Kontak</a>
+      <nav className="fixed top-0 left-0 right-0 z-50 mix-blend-difference px-6 py-6 flex justify-between items-center pointer-events-none">
+        <div className="text-xl font-bold tracking-tighter uppercase pointer-events-auto">
+          Zainal<span className="text-[#FF3333]">.</span>Studio
+        </div>
+        <div className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest pointer-events-auto">
+          <a href="#about" className="hover:text-[#FF3333] transition-colors">About</a>
+          <a href="#works" className="hover:text-[#FF3333] transition-colors">Works</a>
+          <a href="#contact" className="hover:text-[#FF3333] transition-colors">Contact</a>
         </div>
       </nav>
 
       {/* =========================================
-          1. HERO SECTION (Sampul Depan)
+          1. HERO SECTION (GRID & BIG TYPOGRAPHY)
       ========================================= */}
-      <section id="home" className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-        <div className="container mx-auto px-6 z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-0 pt-16">
-          
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-64 h-80 md:w-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-[#222]"
-          >
-            <img 
-              src="/Portofolio/MUHAMMAD_ZAINAL_MUTTAQIN_122100107_FOTO_BG_BIRU.png" 
-              alt="Muhammad Zainal Muttaqin"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </motion.div>
-
-          <div className="flex flex-col items-center md:items-end text-center md:text-right w-full md:w-1/2 z-20">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl md:text-7xl font-black text-white drop-shadow-md leading-tight tracking-tighter uppercase"
-            >
-              MUHAMMAD<br/>
-              <span className="text-[#E10613]">ZAINAL MUTTAQIN</span>
-            </motion.h1>
-            
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="text-xl md:text-2xl mt-4 text-[#FF3B5C] font-semibold h-8 drop-shadow"
-            >
-              <TypeAnimation
-                sequence={[
-                  'Broadcast Production', 2000,
-                  'Camera Operator', 2000,
-                  'Live Streaming Operator', 2000,
-                  'Replay Operator', 2000,
-                  'Video Editor', 2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-              />
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto"
-            >
-              <a href="#portfolio" className="px-8 py-3 bg-[#E10613] text-white font-medium rounded-full hover:bg-[#FF3B5C] transition-all duration-300 shadow-[0_0_20px_rgba(225,6,19,0.4)] hover:shadow-[0_0_30px_rgba(255,59,92,0.6)] hover:-translate-y-1 text-center">
-                View Portfolio
-              </a>
-              <a href="#about" className="px-8 py-3 bg-transparent border border-[#BDBDBD] text-white font-medium rounded-full hover:bg-white hover:text-[#080808] hover:border-white transition-all duration-300 hover:-translate-y-1 text-center cursor-pointer">
-                About Me
-              </a>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================
-          2. ABOUT SECTION 
-      ========================================= */}
-      <section id="about" className="w-full min-h-[50vh] bg-transparent py-28 flex items-center justify-center border-t border-[#222]/50">
-        <div className="container mx-auto px-6 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-md"
-          >
-            ABOUT <span className="text-[#E10613]">ME</span>
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-lg text-white drop-shadow-lg max-w-3xl mx-auto leading-relaxed"
-          >
-            Fresh Graduate in Communication Science with practical experience in broadcast production, live streaming, videography, replay operation, and video editing. Experienced in supporting university productions and national sports events while working collaboratively in professional production teams.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* =========================================
-          3. PORTFOLIO SECTION (CAROUSEL)
-      ========================================= */}
-      <section id="portfolio" className="w-full min-h-[80vh] bg-transparent py-28 flex flex-col justify-center overflow-hidden border-t border-[#222]/50">
-        <div className="container mx-auto px-6 text-center mb-10">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-white drop-shadow-md"
-          >
-            SELECTED <span className="text-[#E10613]">WORKS</span>
-          </motion.h2>
-          <p className="text-white drop-shadow-lg mt-4 tracking-wide text-sm animate-pulse">
-            Swipe / Geser untuk melihat karya ➜
-          </p>
-        </div>
+      <section id="home" className="relative w-full min-h-screen pt-24 px-4 md:px-8 pb-12 flex flex-col justify-center">
+        {/* Garis Grid Dekoratif */}
+        <div className="absolute inset-0 pointer-events-none border-x border-[#1A1A1A] mx-4 md:mx-8" />
+        <div className="absolute top-[30%] left-0 w-full border-t border-[#1A1A1A]" />
         
-        <div 
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-8 md:px-[10vw] pb-10" 
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        <motion.div 
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 w-full max-w-[1400px] mx-auto"
         >
-          {/* FOTO 1: UGJ TV Live */}
-          <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222] shadow-xl">
-            <img 
-              src="/Portofolio/utv.jpeg" 
-              alt="UGJ TV Live" 
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent flex items-end p-6 md:p-8 opacity-90 pointer-events-none">
-              <h3 className="text-2xl font-bold text-white drop-shadow-md">UGJ TV Live</h3>
-            </div>
+          <div className="flex flex-col md:flex-row gap-8 items-end justify-between border-b border-[#1A1A1A] pb-8 mb-8">
+            <motion.div variants={fadeUp} className="text-xs md:text-sm tracking-[0.2em] text-[#888] uppercase">
+              (EST. 2025 — Cirebon, ID)<br />
+              Version 2.0.0
+            </motion.div>
+            <motion.div variants={fadeUp} className="text-xs md:text-sm tracking-[0.2em] text-[#888] uppercase text-left md:text-right">
+              Broadcast Production &<br />
+              Cinematic Videography
+            </motion.div>
           </div>
 
-          {/* VIDEO 2: STREAMING */}
-          <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222] shadow-xl">
-            <video 
-              src="/Portofolio/streaming.mp4" 
-              className="absolute inset-0 w-full h-full object-cover"
-              controls
-              preload="metadata"
+          <motion.h1 
+            variants={fadeUp}
+            className="text-[12vw] md:text-[8vw] leading-[0.85] font-black tracking-tighter uppercase"
+          >
+            MUHAMMAD<br />
+            <span className="text-[#FF3333]">ZAINAL</span> MUTTAQIN<sup className="text-2xl md:text-5xl">®</sup>
+          </motion.h1>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mt-16 border-t border-[#1A1A1A] pt-12">
+            <motion.div variants={fadeUp} className="md:col-span-5 text-lg md:text-xl text-[#A0A0A0] leading-relaxed">
+              WE ALIGN STRATEGY, PRODUCTION, AND ENGINEERING INTO A SINGLE HIGH-PERFORMANCE LOOP. YOUR VISION, EXECUTED WITH SURGICAL PRECISION AND BROADCAST-FIRST LOGIC.
+            </motion.div>
+            
+            <motion.div variants={fadeUp} className="md:col-span-3 md:col-start-10 flex flex-col gap-2 uppercase tracking-widest font-bold text-sm">
+              <span className="border-b border-[#333] pb-2">Camera Operation</span>
+              <span className="border-b border-[#333] pb-2">Live Streaming</span>
+              <span className="border-b border-[#333] pb-2">Video Editing</span>
+              <span className="pb-2">Replay Systems</span>
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* =========================================
+          2. SHOWREEL / FEATURED VIDEO
+      ========================================= */}
+      <section className="w-full px-4 md:px-8 py-12">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+          className="w-full h-[50vh] md:h-[80vh] relative border border-[#1A1A1A] p-2 bg-[#0A0A0A] group"
+        >
+          <div className="absolute top-6 left-6 z-10 flex items-center gap-3 pointer-events-none">
+            <div className="w-2 h-2 rounded-full bg-[#FF3333] animate-pulse" />
+            <span className="text-xs uppercase tracking-widest font-bold bg-black/50 px-2 py-1 backdrop-blur-sm text-white">Live Production</span>
+          </div>
+          <video 
+            src="/Portofolio/streaming.mp4" 
+            className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700"
+            controls
+            preload="metadata"
+          />
+        </motion.div>
+      </section>
+
+      {/* =========================================
+          3. ABOUT / PHILOSOPHY
+      ========================================= */}
+      <section id="about" className="w-full px-4 md:px-8 py-24 bg-[#FF3333] text-[#050505]">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-[10vw] md:text-[6vw] font-black leading-[0.85] tracking-tighter uppercase"
+          >
+            STRATEGY<br />
+            BEFORE<br />
+            PIXELS.
+          </motion.div>
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="flex flex-col justify-end text-lg md:text-2xl font-medium leading-tight"
+          >
+            <p className="mb-8">
+              PEOPLE DECIDE IF THEY TRUST YOUR CONTENT BEFORE THEY HEAR A WORD OF IT. THAT'S NOT A METAPHOR. VISUAL CREDIBILITY FORMS ALMOST INSTANTLY.
+            </p>
+            <div className="w-48 h-64 relative border-2 border-[#050505] overflow-hidden">
+               <img 
+                 src="/Portofolio/MUHAMMAD_ZAINAL_MUTTAQIN_122100107_FOTO_BG_BIRU.png" 
+                 alt="Zainal"
+                 className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
+               />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* =========================================
+          4. SELECTED WORKS (BENTO GRID)
+      ========================================= */}
+      <section id="works" className="w-full px-4 md:px-8 py-32 border-t border-[#1A1A1A]">
+        <div className="max-w-[1400px] mx-auto">
+          <motion.h2 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-[8vw] md:text-[5vw] font-black leading-none tracking-tighter uppercase mb-16"
+          >
+            WE BUILD<br />EXPERIENCES.
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* WORK 1 */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="relative aspect-square md:aspect-[4/3] group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between"
             >
-              Browser kamu tidak mendukung pemutar video.
-            </video>
-            <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-[#080808]/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-              <h3 className="text-xl font-bold text-white drop-shadow-md">Live Streaming Production</h3>
-            </div>
-          </div>
+              <div className="flex justify-between items-start z-10 text-sm font-medium tracking-widest uppercase text-[#888]">
+                <span>(01)</span>
+                <span className="text-right">Live Broadcast<br/>UGJ TV</span>
+              </div>
+              <div className="absolute inset-0 top-16 bottom-16 left-16 right-16 overflow-hidden">
+                <img 
+                  src="/Portofolio/utv.jpeg" 
+                  alt="UGJ TV"
+                  className="w-full h-full object-cover filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+              </div>
+              <h3 className="text-3xl font-black uppercase z-10 tracking-tighter mt-auto">UGJ TV Live</h3>
+            </motion.div>
 
-          {/* FOTO 3: CHENG HOO */}
-          <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222] shadow-xl">
-            <img 
-              src="/Portofolio/summer.jpeg" 
-              alt="Cheng Hoo Tournament" 
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent flex items-end p-6 md:p-8 opacity-90 pointer-events-none">
-              <h3 className="text-2xl font-bold text-white drop-shadow-md">Cheng Hoo Tournament</h3>
-            </div>
+            {/* WORK 2 */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, delay: 0.2 }}
+              variants={fadeUp}
+              className="relative aspect-square md:aspect-[4/3] group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between"
+            >
+              <div className="flex justify-between items-start z-10 text-sm font-medium tracking-widest uppercase text-[#888]">
+                <span>(02)</span>
+                <span className="text-right">Sports Coverage<br/>Cheng Hoo</span>
+              </div>
+              <div className="absolute inset-0 top-16 bottom-16 left-16 right-16 overflow-hidden">
+                <img 
+                  src="/Portofolio/summer.jpeg" 
+                  alt="Cheng Hoo"
+                  className="w-full h-full object-cover filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                />
+              </div>
+              <h3 className="text-3xl font-black uppercase z-10 tracking-tighter mt-auto">Cheng Hoo Cup</h3>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* =========================================
-          4. CONTACT SECTION (FOOTER)
+          5. FOOTER / CONTACT
       ========================================= */}
-      <section id="contact" className="w-full bg-transparent py-20 border-t border-[#222]/50">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white drop-shadow-md">
-            Let's Work <span className="text-[#E10613]">Together</span>
-          </h2>
-          <p className="text-white drop-shadow-lg mb-10 max-w-xl mx-auto">
-            Tertarik untuk berkolaborasi dalam produksi video, live streaming, atau project broadcast selanjutnya? Mari diskusikan ide Anda!
-          </p>
+      <section id="contact" className="w-full px-4 md:px-8 py-32 border-t border-[#1A1A1A] bg-[#020202]">
+        <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-sm font-bold tracking-[0.3em] uppercase text-[#FF3333] mb-8"
+          >
+            Start a Project
+          </motion.div>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-12">
-            <a href="mailto:jenalstudio@gmail.com" className="flex items-center gap-3 text-white hover:text-[#E10613] transition-colors cursor-pointer drop-shadow">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              <span>jenalstudio@gmail.com</span>
-            </a>
-            
-            <a href="https://instagram.com/mnalm_7/" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-white hover:text-[#E10613] transition-colors cursor-pointer drop-shadow">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-              <span>@mnalm_7</span>
-            </a>
-            
-            <div className="flex items-center gap-3 text-white drop-shadow">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-              <span>Cirebon, Jawa Barat</span>
-            </div>
-          </div>
-          
-          <p className="text-sm text-white/70 border-t border-[#222]/50 pt-6">
-            © {new Date().getFullYear()} Muhammad Zainal Muttaqin. All rights reserved.
-          </p>
+          <motion.a 
+            href="mailto:jenalstudio@gmail.com"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-[6vw] md:text-[4vw] font-black tracking-tighter uppercase hover:text-[#FF3333] transition-colors duration-300"
+          >
+            JENALSTUDIO<br/>@GMAIL.COM
+          </motion.a>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="flex gap-8 mt-16 text-sm font-medium tracking-widest uppercase text-[#888]"
+          >
+            <a href="https://instagram.com/mnalm_7/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
+            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+          </motion.div>
         </div>
       </section>
-
-      {/* =========================================
-          5. TOMBOL SCROLL TO TOP
-      ========================================= */}
-      {showTopBtn && (
-        <button 
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-4 bg-[#E10613] text-white rounded-full shadow-[0_0_20px_rgba(225,6,19,0.5)] hover:bg-[#FF3B5C] hover:-translate-y-2 transition-all duration-300 group"
-          title="Kembali ke Atas"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 15l7-7 7 7" />
-          </svg>
-        </button>
-      )}
 
     </div>
   );
