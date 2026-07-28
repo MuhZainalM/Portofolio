@@ -160,7 +160,7 @@ export default function PortfolioWebsite() {
           {/* FOTO 1: UGJ TV Live */}
           <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222]">
             <Image 
-              src="/utv.jpeg" 
+              src="/Portofolio/utv.jpeg" 
               alt="UGJ TV Live" 
               fill 
               style={{ objectFit: 'cover' }} 
@@ -191,7 +191,7 @@ export default function PortfolioWebsite() {
           {/* FOTO 3: CHENG HOO */}
           <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222]">
             <Image 
-              src="/summer.jpeg" 
+              src="/Portofolio/summer.jpeg" 
               alt="Cheng Hoo Tournament" 
               fill 
               style={{ objectFit: 'cover' }} 
