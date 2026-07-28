@@ -48,12 +48,10 @@ export default function PortfolioWebsite() {
             className="relative w-64 h-80 md:w-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-[#161616]"
           >
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/20 to-transparent z-10" />
-            <Image 
-              src="/MUHAMMAD_ZAINAL_MUTTAQIN_122100107_FOTO_BG_BIRU.png" 
+            <img 
+              src="/Portofolio/MUHAMMAD_ZAINAL_MUTTAQIN_122100107_FOTO_BG_BIRU.png" 
               alt="Muhammad Zainal Muttaqin"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </motion.div>
 
@@ -159,12 +157,10 @@ export default function PortfolioWebsite() {
           
           {/* FOTO 1: UGJ TV Live */}
           <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222]">
-            <Image 
+            <img 
               src="/Portofolio/utv.jpeg" 
               alt="UGJ TV Live" 
-              fill 
-              style={{ objectFit: 'cover' }} 
-              className="group-hover:scale-105 transition-transform duration-700"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             {/* Teks penjelas (pointer-events-none agar tidak menghalangi klik) */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent flex items-end p-6 md:p-8 opacity-90 pointer-events-none">
@@ -190,12 +186,10 @@ export default function PortfolioWebsite() {
 
           {/* FOTO 3: CHENG HOO */}
           <div className="snap-center shrink-0 w-[80vw] md:w-[600px] h-[300px] md:h-[400px] relative rounded-2xl overflow-hidden group border border-[#222]">
-            <Image 
+            <img 
               src="/Portofolio/summer.jpeg" 
               alt="Cheng Hoo Tournament" 
-              fill 
-              style={{ objectFit: 'cover' }} 
-              className="group-hover:scale-105 transition-transform duration-700"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent flex items-end p-6 md:p-8 opacity-90 pointer-events-none">
               <h3 className="text-2xl font-bold text-white shadow-black drop-shadow-md">Cheng Hoo Tournament</h3>
