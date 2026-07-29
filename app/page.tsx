@@ -46,7 +46,7 @@ export default function MattisPremiumPortfolio() {
       ========================================= */}
       <nav className="fixed top-0 left-0 right-0 z-50 mix-blend-difference px-6 py-6 flex justify-between items-center pointer-events-none">
         <div className="text-xl font-bold tracking-tighter uppercase pointer-events-auto cursor-pointer">
-          Zainal<span className="text-[#FF3333]">.</span>Studio
+          M Zainal M<span className="text-[#FF3333]">.</span>Studio
         </div>
         <div className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest pointer-events-auto bg-transparent">
           <a href="#about" className="hover:text-[#FF3333] transition-colors">About</a>
@@ -118,7 +118,7 @@ export default function MattisPremiumPortfolio() {
             </p>
             <div className="w-full md:w-64 aspect-[3/4] relative border-2 border-[#050505] overflow-hidden group">
                <img src="/Portofolio/MUHAMMAD_ZAINAL_MUTTAQIN_122100107_FOTO_BG_BIRU.png" alt="Zainal" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 group-hover:scale-105" />
-               <div className="absolute bottom-4 left-4 text-xs font-black tracking-widest bg-white text-black px-2 py-1">ZAINAL MUTTAQIN / CEO</div>
+               <div className="absolute bottom-4 left-4 text-xs font-black tracking-widest bg-white text-black px-2 py-1">Muh ZAINAL MUTTAQIN</div>
             </div>
           </motion.div>
         </div>
@@ -244,7 +244,7 @@ export default function MattisPremiumPortfolio() {
           </motion.div>
 
           <div className="w-full border-t border-[#1A1A1A] mt-24 pt-8 flex justify-between text-xs font-bold tracking-widest uppercase text-[#555]">
-            <span>© 2026 ZAINAL STUDIO</span>
+            <span>© 2026 MUHAMMAD ZAINAL MUTTAQIN</span>
             <span>BASED IN INDONESIA</span>
           </div>
         </div>
