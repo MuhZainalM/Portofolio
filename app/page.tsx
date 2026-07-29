@@ -287,17 +287,17 @@ export default function MattisPremiumPortfolio() {
                     <span className="text-right">{work.tag}</span>
                   </div>
                   
-                 <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A] flex items-center justify-center bg-black/40">
+                 <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A] flex items-center justify-center bg-[#080808]">
                     {work.type === 'image' ? (
                       <img 
                         src={work.src} 
                         alt={work.title} 
-                        className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+                        className="max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
                       />
                     ) : (
                       <video 
                         src={work.src} 
-                        className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                        className="max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
                         controls 
                         preload="metadata"
                       />
