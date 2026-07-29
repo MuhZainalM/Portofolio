@@ -37,11 +37,11 @@ const broadcastWorks = [
 // 2. DATABASE KARYA: KEGIATAN (5 Foto)
 // =========================================
 const kegiatanWorks = [
-  { id: 'k_f1', type: 'image', src: '/Portofolio/Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters.jpg', title: 'Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters', tag: 'Kegiatan' },
-  { id: 'k_f2', type: 'image', src: '/Portofolio/Benchmarking Visit to TRANS7.jpg', title: 'Benchmarking Visit to TRANS7', tag: 'Kegiatan' },
-  { id: 'k_f3', type: 'image', src: '/Portofolio/Capacity Building Communication.jpg', title: 'Capacity Building Communication', tag: 'Kegiatan' },
-  { id: 'k_f4', type: 'image', src: '/Portofolio/Internship at DISNAKERTRANS Kuningan Regency.jpg', title: 'Internship at DISNAKERTRANS Kuningan Regency', tag: 'Kegiatan' },
-  { id: 'k_f5', type: 'image', src: '/Portofolio/Investor Relations Meeting.jpg', title: 'Investor Relations Meeting', tag: 'Kegiatan' },
+  { id: 'k_f1', type: 'image', src: '/Portofolio/Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters.jpeg', title: 'Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters', tag: 'Kegiatan' },
+  { id: 'k_f2', type: 'image', src: '/Portofolio/Benchmarking Visit to TRANS7.jpeg', title: 'Benchmarking Visit to TRANS7', tag: 'Kegiatan' },
+  { id: 'k_f3', type: 'image', src: '/Portofolio/Capacity Building Communication.jpeg', title: 'Capacity Building Communication', tag: 'Kegiatan' },
+  { id: 'k_f4', type: 'image', src: '/Portofolio/Internship at DISNAKERTRANS Kuningan Regency.jpeg', title: 'Internship at DISNAKERTRANS Kuningan Regency', tag: 'Kegiatan' },
+  { id: 'k_f5', type: 'image', src: '/Portofolio/Investor Relations Meeting.jpeg', title: 'Investor Relations Meeting', tag: 'Kegiatan' },
 ];
 
 // =========================================
@@ -287,17 +287,17 @@ export default function MattisPremiumPortfolio() {
                     <span className="text-right">{work.tag}</span>
                   </div>
                   
-                  <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A]">
+                 <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A] flex items-center justify-center bg-black/40">
                     {work.type === 'image' ? (
                       <img 
                         src={work.src} 
                         alt={work.title} 
-                        className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+                        className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
                       />
                     ) : (
                       <video 
                         src={work.src} 
-                        className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                        className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
                         controls 
                         preload="metadata"
                       />
