@@ -6,6 +6,41 @@
 import { useEffect, useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
+// =========================================
+// DATABASE KARYA (EDIT NAMA FILE DI SINI NANTI)
+// =========================================
+const worksData = [
+  // --- 3 VIDEO ---
+  { id: 1, type: 'video', src: '/Portofolio/streaming.mp4', title: 'Live Streaming 1', tag: 'Broadcast' },
+  { id: 2, type: 'video', src: '/Portofolio/vid2.mp4', title: 'Live Streaming 2', tag: 'Broadcast' },
+  { id: 3, type: 'video', src: '/Portofolio/vid3.mp4', title: 'Cinematic Video', tag: 'Videography' },
+  
+  // --- 23 FOTO ---
+  { id: 4, type: 'image', src: '/Portofolio/utv.jpeg', title: 'UGJ TV Live', tag: 'Documentation' },
+  { id: 5, type: 'image', src: '/Portofolio/summer.jpeg', title: 'Cheng Hoo Cup', tag: 'Sports Coverage' },
+  { id: 6, type: 'image', src: '/Portofolio/foto3.jpg', title: 'Project 03', tag: 'Photography' },
+  { id: 7, type: 'image', src: '/Portofolio/foto4.jpg', title: 'Project 04', tag: 'Photography' },
+  { id: 8, type: 'image', src: '/Portofolio/foto5.jpg', title: 'Project 05', tag: 'Photography' },
+  { id: 9, type: 'image', src: '/Portofolio/foto6.jpg', title: 'Project 06', tag: 'Photography' },
+  { id: 10, type: 'image', src: '/Portofolio/foto7.jpg', title: 'Project 07', tag: 'Photography' },
+  { id: 11, type: 'image', src: '/Portofolio/foto8.jpg', title: 'Project 08', tag: 'Photography' },
+  { id: 12, type: 'image', src: '/Portofolio/foto9.jpg', title: 'Project 09', tag: 'Photography' },
+  { id: 13, type: 'image', src: '/Portofolio/foto10.jpg', title: 'Project 10', tag: 'Photography' },
+  { id: 14, type: 'image', src: '/Portofolio/foto11.jpg', title: 'Project 11', tag: 'Photography' },
+  { id: 15, type: 'image', src: '/Portofolio/foto12.jpg', title: 'Project 12', tag: 'Photography' },
+  { id: 16, type: 'image', src: '/Portofolio/foto13.jpg', title: 'Project 13', tag: 'Photography' },
+  { id: 17, type: 'image', src: '/Portofolio/foto14.jpg', title: 'Project 14', tag: 'Photography' },
+  { id: 18, type: 'image', src: '/Portofolio/foto15.jpg', title: 'Project 15', tag: 'Photography' },
+  { id: 19, type: 'image', src: '/Portofolio/foto16.jpg', title: 'Project 16', tag: 'Photography' },
+  { id: 20, type: 'image', src: '/Portofolio/foto17.jpg', title: 'Project 17', tag: 'Photography' },
+  { id: 21, type: 'image', src: '/Portofolio/foto18.jpg', title: 'Project 18', tag: 'Photography' },
+  { id: 22, type: 'image', src: '/Portofolio/foto19.jpg', title: 'Project 19', tag: 'Photography' },
+  { id: 23, type: 'image', src: '/Portofolio/foto20.jpg', title: 'Project 20', tag: 'Photography' },
+  { id: 24, type: 'image', src: '/Portofolio/foto21.jpg', title: 'Project 21', tag: 'Photography' },
+  { id: 25, type: 'image', src: '/Portofolio/foto22.jpg', title: 'Project 22', tag: 'Photography' },
+  { id: 26, type: 'image', src: '/Portofolio/foto23.jpg', title: 'Project 23', tag: 'Photography' },
+];
+
 export default function MattisPremiumPortfolio() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -105,7 +140,7 @@ export default function MattisPremiumPortfolio() {
       </section>
 
       {/* =========================================
-          3. ABOUT & PHILOSOPHY (RED SECTION)
+          3. ABOUT & PHILOSOPHY
       ========================================= */}
       <section id="about" className="w-full px-4 md:px-8 py-32 bg-[#FF3333] text-[#050505] border-y border-[#1A1A1A]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
@@ -125,7 +160,7 @@ export default function MattisPremiumPortfolio() {
       </section>
 
       {/* =========================================
-          4. BIG STATS (NEW!)
+          4. BIG STATS
       ========================================= */}
       <section className="w-full px-4 md:px-8 py-32 border-b border-[#1A1A1A] bg-[#EAEAEA] text-[#050505]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#050505]">
@@ -141,15 +176,15 @@ export default function MattisPremiumPortfolio() {
               <a href="#contact" className="text-sm font-bold tracking-widest uppercase border-b-2 border-[#050505] pb-1 hover:text-[#FF3333] hover:border-[#FF3333] transition-colors">Start a Project ↗</a>
             </div>
             <div>
-              <div className="text-[10vw] md:text-[7vw] font-black tracking-tighter leading-none mb-4">/4.9+</div>
-              <p className="text-lg uppercase font-medium max-w-sm">Average client rating across all professional productions.</p>
+              <div className="text-[10vw] md:text-[7vw] font-black tracking-tighter leading-none mb-4">/100+</div>
+              <p className="text-lg uppercase font-medium max-w-sm">Hours of Live Broadcast & Production Recorded.</p>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* =========================================
-          5. SERVICES ACCORDION (NEW!)
+          5. SERVICES ACCORDION
       ========================================= */}
       <section id="services" className="w-full px-4 md:px-8 py-32 border-b border-[#1A1A1A]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
@@ -189,36 +224,62 @@ export default function MattisPremiumPortfolio() {
       </section>
 
       {/* =========================================
-          6. SELECTED WORKS (BENTO GRID)
+          6. SELECTED WORKS (CAROUSEL PREMIUM)
       ========================================= */}
-      <section id="works" className="w-full px-4 md:px-8 py-32 border-b border-[#1A1A1A]">
-        <div className="max-w-[1400px] mx-auto">
-          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-[10vw] md:text-[7vw] font-black leading-none tracking-tighter uppercase mb-16">
-            SELECTED<br />WORKS.
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative aspect-square md:aspect-[4/3] group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between">
-              <div className="flex justify-between items-start z-10 text-sm font-bold tracking-widest uppercase text-[#888]">
-                <span>(01)</span><span className="text-right">Live Broadcast<br/>UGJ TV</span>
-              </div>
-              <div className="absolute inset-0 top-16 bottom-16 left-16 right-16 overflow-hidden">
-                <img src="/Portofolio/utv.jpeg" alt="UGJ TV" className="w-full h-full object-cover filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-              </div>
-              <h3 className="text-3xl font-black uppercase z-10 tracking-tighter mt-auto">UGJ TV Live</h3>
-            </motion.div>
-
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative aspect-square md:aspect-[4/3] group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between">
-              <div className="flex justify-between items-start z-10 text-sm font-bold tracking-widest uppercase text-[#888]">
-                <span>(02)</span><span className="text-right">Sports Coverage<br/>Cheng Hoo</span>
-              </div>
-              <div className="absolute inset-0 top-16 bottom-16 left-16 right-16 overflow-hidden">
-                <img src="/Portofolio/summer.jpeg" alt="Cheng Hoo" className="w-full h-full object-cover filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-              </div>
-              <h3 className="text-3xl font-black uppercase z-10 tracking-tighter mt-auto">Cheng Hoo Cup</h3>
-            </motion.div>
-          </div>
+      <section id="works" className="w-full py-32 border-b border-[#1A1A1A] overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-16">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex flex-col md:flex-row justify-between items-end gap-6">
+            <h2 className="text-[10vw] md:text-[7vw] font-black leading-none tracking-tighter uppercase">
+              SELECTED<br />WORKS.
+            </h2>
+            <p className="text-[#FF3333] text-sm font-bold tracking-widest uppercase animate-pulse">
+              Scroll to explore ➜
+            </p>
+          </motion.div>
         </div>
+
+        {/* Horizontal Scroll Container */}
+        <motion.div 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true }} 
+          variants={fadeUp}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-4 md:px-8 pb-12"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {worksData.map((work, index) => (
+            <div 
+              key={work.id} 
+              className="snap-center shrink-0 w-[85vw] md:w-[60vw] h-[50vh] md:h-[70vh] relative group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between"
+            >
+              <div className="flex justify-between items-start z-10 text-sm font-bold tracking-widest uppercase text-[#888]">
+                <span>({String(index + 1).padStart(2, '0')})</span>
+                <span className="text-right">{work.tag}</span>
+              </div>
+              
+              <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A]">
+                {work.type === 'image' ? (
+                  <img 
+                    src={work.src} 
+                    alt={work.title} 
+                    className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+                  />
+                ) : (
+                  <video 
+                    src={work.src} 
+                    className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                    controls 
+                    preload="metadata"
+                  />
+                )}
+              </div>
+
+              <h3 className="text-2xl md:text-4xl font-black uppercase z-10 tracking-tighter mt-auto">
+                {work.title}
+              </h3>
+            </div>
+          ))}
+        </motion.div>
       </section>
 
       {/* =========================================
