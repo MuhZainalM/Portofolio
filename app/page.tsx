@@ -333,7 +333,7 @@ export default function MattisPremiumPortfolio() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex gap-12 mt-24 text-sm font-bold tracking-widest uppercase text-[#888]">
             <a href="https://instagram.com/mnalm_7/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/muhammad-zainal-muttaqin-1a85022b1/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
           </motion.div>
 
           <div className="w-full border-t border-[#1A1A1A] mt-24 pt-8 flex justify-between text-xs font-bold tracking-widest uppercase text-[#555]">
