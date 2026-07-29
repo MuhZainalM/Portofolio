@@ -7,38 +7,60 @@ import { useEffect, useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 // =========================================
-// DATABASE KARYA (EDIT NAMA FILE DI SINI NANTI)
+// 1. DATABASE KARYA: BROADCAST (13 Foto, 4 Video)
 // =========================================
-const worksData = [
-  // --- 3 VIDEO ---
-  { id: 1, type: 'video', src: '/Portofolio/streaming.mp4', title: 'Live Streaming 1', tag: 'Broadcast' },
-  { id: 2, type: 'video', src: '/Portofolio/vid2.mp4', title: 'Live Streaming 2', tag: 'Broadcast' },
-  { id: 3, type: 'video', src: '/Portofolio/vid3.mp4', title: 'Cinematic Video', tag: 'Videography' },
-  
-  // --- 23 FOTO ---
-  { id: 4, type: 'image', src: '/Portofolio/utv.jpeg', title: 'UGJ TV Live', tag: 'Documentation' },
-  { id: 5, type: 'image', src: '/Portofolio/summer.jpeg', title: 'Cheng Hoo Cup', tag: 'Sports Coverage' },
-  { id: 6, type: 'image', src: '/Portofolio/foto3.jpg', title: 'Project 03', tag: 'Photography' },
-  { id: 7, type: 'image', src: '/Portofolio/foto4.jpg', title: 'Project 04', tag: 'Photography' },
-  { id: 8, type: 'image', src: '/Portofolio/foto5.jpg', title: 'Project 05', tag: 'Photography' },
-  { id: 9, type: 'image', src: '/Portofolio/foto6.jpg', title: 'Project 06', tag: 'Photography' },
-  { id: 10, type: 'image', src: '/Portofolio/foto7.jpg', title: 'Project 07', tag: 'Photography' },
-  { id: 11, type: 'image', src: '/Portofolio/foto8.jpg', title: 'Project 08', tag: 'Photography' },
-  { id: 12, type: 'image', src: '/Portofolio/foto9.jpg', title: 'Project 09', tag: 'Photography' },
-  { id: 13, type: 'image', src: '/Portofolio/foto10.jpg', title: 'Project 10', tag: 'Photography' },
-  { id: 14, type: 'image', src: '/Portofolio/foto11.jpg', title: 'Project 11', tag: 'Photography' },
-  { id: 15, type: 'image', src: '/Portofolio/foto12.jpg', title: 'Project 12', tag: 'Photography' },
-  { id: 16, type: 'image', src: '/Portofolio/foto13.jpg', title: 'Project 13', tag: 'Photography' },
-  { id: 17, type: 'image', src: '/Portofolio/foto14.jpg', title: 'Project 14', tag: 'Photography' },
-  { id: 18, type: 'image', src: '/Portofolio/foto15.jpg', title: 'Project 15', tag: 'Photography' },
-  { id: 19, type: 'image', src: '/Portofolio/foto16.jpg', title: 'Project 16', tag: 'Photography' },
-  { id: 20, type: 'image', src: '/Portofolio/foto17.jpg', title: 'Project 17', tag: 'Photography' },
-  { id: 21, type: 'image', src: '/Portofolio/foto18.jpg', title: 'Project 18', tag: 'Photography' },
-  { id: 22, type: 'image', src: '/Portofolio/foto19.jpg', title: 'Project 19', tag: 'Photography' },
-  { id: 23, type: 'image', src: '/Portofolio/foto20.jpg', title: 'Project 20', tag: 'Photography' },
-  { id: 24, type: 'image', src: '/Portofolio/foto21.jpg', title: 'Project 21', tag: 'Photography' },
-  { id: 25, type: 'image', src: '/Portofolio/foto22.jpg', title: 'Project 22', tag: 'Photography' },
-  { id: 26, type: 'image', src: '/Portofolio/foto23.jpg', title: 'Project 23', tag: 'Photography' },
+const broadcastWorks = [
+  // 4 VIDEO
+  { id: 'b_v1', type: 'video', src: '/Portofolio/streaming.mp4', title: 'Live Streaming 1', tag: 'Broadcast Video' },
+  { id: 'b_v2', type: 'video', src: '/Portofolio/Editor & Assistant Director Short Film Project.mp4', title: 'Editor & Assistant Director Short Film Project', tag: 'Broadcast Video' },
+  { id: 'b_v3', type: 'video', src: '/Portofolio/Broadcast Streaming Operator Project 3.mp4', title: 'Broadcast Streaming Operator Project 3', tag: 'Broadcast Video' },
+  { id: 'b_v4', type: 'video', src: '/Portofolio/Broadcast Streaming Operator Project 4.mp4', title: 'Broadcast Streaming Operator Project 4', tag: 'Broadcast Video' },
+  // 13 FOTO
+  { id: 'b_f1', type: 'image', src: '/Portofolio/utv.jpeg', title: 'UGJ TV Live', tag: 'Broadcast Photo' },
+  { id: 'b_f2', type: 'image', src: '/Portofolio/summer.jpeg', title: 'Cheng Hoo Cup', tag: 'Broadcast Photo' },
+  { id: 'b_f3', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 1.jpeg', title: 'Broadcast Streaming Operator Project 1', tag: 'Broadcast Photo' },
+  { id: 'b_f4', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 2.jpeg', title: 'Broadcast Streaming Operator Project 2', tag: 'Broadcast Photo' },
+  { id: 'b_f5', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 5.jpeg', title: 'Broadcast Streaming Operator Project 5', tag: 'Broadcast Photo' },
+  { id: 'b_f6', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 6.jpeg', title: 'Broadcast Streaming Operator Project 6', tag: 'Broadcast Photo' },
+  { id: 'b_f7', type: 'image', src: '/Portofolio/Camera Operator at FISIP UGJ.jpeg', title: 'Camera Operator at FISIP UGJ', tag: 'Broadcast Photo' },
+  { id: 'b_f8', type: 'image', src: '/Portofolio/Camera Operator YBA & Cheng Hoo Events.jpeg', title: 'Camera Operator YBA & Cheng Hoo Events', tag: 'Broadcast Photo' },
+  { id: 'b_f9', type: 'image', src: '/Portofolio/Cheng Hoo Tournament 2025.jpeg', title: 'Cheng Hoo Tournament 2025', tag: 'Broadcast Photo' },
+  { id: 'b_f10', type: 'image', src: '/Portofolio/Cheng Hoo Tournament 2026.jpeg', title: 'Cheng Hoo Tournament 2026', tag: 'Broadcast Photo' },
+  { id: 'b_f11', type: 'image', src: '/Portofolio/Operator YBA dan Cheng Hoo.jpeg', title: 'Operator YBA dan Cheng Hoo', tag: 'Broadcast Photo' },
+  { id: 'b_f12', type: 'image', src: '/Portofolio/Project Cheng Hoo 2025.jpeg', title: 'Project Cheng Hoo 2025', tag: 'Broadcast Photo' },
+  { id: 'b_f13', type: 'image', src: '/Portofolio/Recording Crew at the State Building, Cirebon City.jpeg', title: 'Recording Crew at the State Building, Cirebon City', tag: 'Broadcast Photo' },
+  { id: 'b_f14', type: 'image', src: '/Portofolio/Surveillance Camera Operator Village Official Recruitment Examination.jpeg', title: 'Surveillance Camera Operator Village Official Recruitment Examination', tag: 'Broadcast Photo' },
+
+];
+
+// =========================================
+// 2. DATABASE KARYA: KEGIATAN (5 Foto)
+// =========================================
+const kegiatanWorks = [
+  { id: 'k_f1', type: 'image', src: '/Portofolio/Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters.jpg', title: 'Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters', tag: 'Kegiatan' },
+  { id: 'k_f2', type: 'image', src: '/Portofolio/Benchmarking Visit to TRANS7.jpg', title: 'Benchmarking Visit to TRANS7', tag: 'Kegiatan' },
+  { id: 'k_f3', type: 'image', src: '/Portofolio/Capacity Building Communication.jpg', title: 'Capacity Building Communication', tag: 'Kegiatan' },
+  { id: 'k_f4', type: 'image', src: '/Portofolio/Internship at DISNAKERTRANS Kuningan Regency.jpg', title: 'Internship at DISNAKERTRANS Kuningan Regency', tag: 'Kegiatan' },
+  { id: 'k_f5', type: 'image', src: '/Portofolio/Investor Relations Meeting.jpg', title: 'Investor Relations Meeting', tag: 'Kegiatan' },
+];
+
+// =========================================
+// 3. DATABASE KARYA: HASIL (6 Foto)
+// =========================================
+const hasilWorks = [
+  { id: 'h_f1', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 1.jpeg', title: 'Adobe Dimension Project Showcase Part 1', tag: 'Hasil' },
+  { id: 'h_f2', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 2.jpeg', title: 'Adobe Dimension Project Showcase Part 2', tag: 'Hasil' },
+  { id: 'h_f3', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 3.jpeg', title: 'Adobe Dimension Project Showcase Part 3', tag: 'Hasil' },
+  { id: 'h_f4', type: 'image', src: '/Portofolio/Color Grading with DaVinci Resolve Part 1.jpeg', title: 'Color Grading with DaVinci Resolve Part 1', tag: 'Hasil' },
+  { id: 'h_f5', type: 'image', src: '/Portofolio/Color Grading with DaVinci Resolve Part 2.jpeg', title: 'Color Grading with DaVinci Resolve Part 2', tag: 'Hasil' },
+  { id: 'h_f6', type: 'image', src: '/Portofolio/Photo Editing with Snapseed.jpeg', title: 'Photo Editing with Snapseed', tag: 'Hasil' },
+];
+
+// Penggabungan Kategori untuk dirender di Carousel
+const portfolioCategories = [
+  { title: "BROADCAST", items: broadcastWorks },
+  { title: "KEGIATAN", items: kegiatanWorks },
+  { title: "HASIL KARYA", items: hasilWorks },
 ];
 
 export default function MattisPremiumPortfolio() {
@@ -195,7 +217,6 @@ export default function MattisPremiumPortfolio() {
             </h3>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="md:col-span-7">
-            {/* Service 1 */}
             <div className="border-t border-[#333] py-8 flex flex-col md:flex-row gap-8 hover:bg-[#111] transition-colors px-4 cursor-pointer">
               <div className="text-[#888] font-mono">01</div>
               <div className="flex-1">
@@ -203,7 +224,6 @@ export default function MattisPremiumPortfolio() {
                 <p className="text-[#A0A0A0] leading-relaxed">Multi-camera setup, live switching, and seamless streaming for sports, corporate events, and university productions. Ensuring zero downtime and maximum engagement.</p>
               </div>
             </div>
-            {/* Service 2 */}
             <div className="border-t border-[#333] py-8 flex flex-col md:flex-row gap-8 hover:bg-[#111] transition-colors px-4 cursor-pointer">
               <div className="text-[#888] font-mono">02</div>
               <div className="flex-1">
@@ -211,7 +231,6 @@ export default function MattisPremiumPortfolio() {
                 <p className="text-[#A0A0A0] leading-relaxed">High-end camera operation focusing on composition, lighting, and movement to tell a compelling story for documentaries or commercials.</p>
               </div>
             </div>
-            {/* Service 3 */}
             <div className="border-y border-[#333] py-8 flex flex-col md:flex-row gap-8 hover:bg-[#111] transition-colors px-4 cursor-pointer">
               <div className="text-[#888] font-mono">03</div>
               <div className="flex-1">
@@ -224,10 +243,10 @@ export default function MattisPremiumPortfolio() {
       </section>
 
       {/* =========================================
-          6. SELECTED WORKS (CAROUSEL PREMIUM)
+          6. SELECTED WORKS (3 CAROUSELS PREMIUM)
       ========================================= */}
       <section id="works" className="w-full py-32 border-b border-[#1A1A1A] overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-16">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-24">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex flex-col md:flex-row justify-between items-end gap-6">
             <h2 className="text-[10vw] md:text-[7vw] font-black leading-none tracking-tighter uppercase">
               SELECTED<br />WORKS.
@@ -238,48 +257,61 @@ export default function MattisPremiumPortfolio() {
           </motion.div>
         </div>
 
-        {/* Horizontal Scroll Container */}
-        <motion.div 
-          initial="hidden" 
-          whileInView="visible" 
-          viewport={{ once: true }} 
-          variants={fadeUp}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-4 md:px-8 pb-12"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {worksData.map((work, index) => (
-            <div 
-              key={work.id} 
-              className="snap-center shrink-0 w-[85vw] md:w-[60vw] h-[50vh] md:h-[70vh] relative group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between"
-            >
-              <div className="flex justify-between items-start z-10 text-sm font-bold tracking-widest uppercase text-[#888]">
-                <span>({String(index + 1).padStart(2, '0')})</span>
-                <span className="text-right">{work.tag}</span>
-              </div>
-              
-              <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A]">
-                {work.type === 'image' ? (
-                  <img 
-                    src={work.src} 
-                    alt={work.title} 
-                    className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
-                  />
-                ) : (
-                  <video 
-                    src={work.src} 
-                    className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
-                    controls 
-                    preload="metadata"
-                  />
-                )}
-              </div>
-
-              <h3 className="text-2xl md:text-4xl font-black uppercase z-10 tracking-tighter mt-auto">
-                {work.title}
+        {/* LOOPING UNTUK MEMBUAT 3 CAROUSEL (BROADCAST, KEGIATAN, HASIL) */}
+        {portfolioCategories.map((category, catIndex) => (
+          <div key={catIndex} className="mb-24 last:mb-0">
+            {/* Judul Kategori */}
+            <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-8 flex items-center gap-6">
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-widest text-[#EAEAEA]">
+                / {category.title}
               </h3>
+              <div className="flex-1 border-t border-[#333]" />
             </div>
-          ))}
-        </motion.div>
+
+            {/* Container Carousel Geser */}
+            <motion.div 
+              initial="hidden" 
+              whileInView="visible" 
+              viewport={{ once: true }} 
+              variants={fadeUp}
+              className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-4 md:px-8 pb-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {category.items.map((work, index) => (
+                <div 
+                  key={work.id} 
+                  className="snap-center shrink-0 w-[85vw] md:w-[60vw] h-[50vh] md:h-[70vh] relative group overflow-hidden border border-[#1A1A1A] bg-[#0A0A0A] p-4 flex flex-col justify-between"
+                >
+                  <div className="flex justify-between items-start z-10 text-sm font-bold tracking-widest uppercase text-[#888]">
+                    <span>({String(index + 1).padStart(2, '0')})</span>
+                    <span className="text-right">{work.tag}</span>
+                  </div>
+                  
+                  <div className="absolute inset-0 top-16 bottom-20 left-4 right-4 md:left-12 md:right-12 overflow-hidden border border-[#1A1A1A]">
+                    {work.type === 'image' ? (
+                      <img 
+                        src={work.src} 
+                        alt={work.title} 
+                        className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" 
+                      />
+                    ) : (
+                      <video 
+                        src={work.src} 
+                        className="w-full h-full object-cover filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                        controls 
+                        preload="metadata"
+                      />
+                    )}
+                  </div>
+
+                  <h3 className="text-2xl md:text-4xl font-black uppercase z-10 tracking-tighter mt-auto">
+                    {work.title}
+                  </h3>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        ))}
       </section>
 
       {/* =========================================
@@ -305,7 +337,7 @@ export default function MattisPremiumPortfolio() {
           </motion.div>
 
           <div className="w-full border-t border-[#1A1A1A] mt-24 pt-8 flex justify-between text-xs font-bold tracking-widest uppercase text-[#555]">
-            <span>© 2026 MUHAMMAD ZAINAL MUTTAQIN</span>
+            <span>© {new Date().getFullYear()} MUHAMMAD ZAINAL MUTTAQIN</span>
             <span>BASED IN INDONESIA</span>
           </div>
         </div>
