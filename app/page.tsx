@@ -12,46 +12,47 @@ import { motion, Variants } from 'framer-motion';
 const broadcastWorks = [
   // 4 VIDEO
   { id: 'b_v1', type: 'video', src: '/Portofolio/streaming.mp4', title: 'Live Streaming 1', tag: 'Broadcast Video' },
-  { id: 'b_v2', type: 'video', src: '/Portofolio/b_vid2.mp4', title: 'Live Streaming 2', tag: 'Broadcast Video' },
-  { id: 'b_v3', type: 'video', src: '/Portofolio/b_vid3.mp4', title: 'Live Streaming 3', tag: 'Broadcast Video' },
-  { id: 'b_v4', type: 'video', src: '/Portofolio/b_vid4.mp4', title: 'Live Streaming 4', tag: 'Broadcast Video' },
+  { id: 'b_v2', type: 'video', src: '/Portofolio/Editor & Assistant Director Short Film Project.mp4', title: 'Editor & Assistant Director Short Film Project', tag: 'Broadcast Video' },
+  { id: 'b_v3', type: 'video', src: '/Portofolio/Broadcast Streaming Operator Project 3.mp4', title: 'Broadcast Streaming Operator Project 3', tag: 'Broadcast Video' },
+  { id: 'b_v4', type: 'video', src: '/Portofolio/Broadcast Streaming Operator Project 4.mp4', title: 'Broadcast Streaming Operator Project 4', tag: 'Broadcast Video' },
   // 13 FOTO
   { id: 'b_f1', type: 'image', src: '/Portofolio/utv.jpeg', title: 'UGJ TV Live', tag: 'Broadcast Photo' },
   { id: 'b_f2', type: 'image', src: '/Portofolio/summer.jpeg', title: 'Cheng Hoo Cup', tag: 'Broadcast Photo' },
-  { id: 'b_f3', type: 'image', src: '/Portofolio/b_foto3.jpg', title: 'Broadcast 03', tag: 'Broadcast Photo' },
-  { id: 'b_f4', type: 'image', src: '/Portofolio/b_foto4.jpg', title: 'Broadcast 04', tag: 'Broadcast Photo' },
-  { id: 'b_f5', type: 'image', src: '/Portofolio/b_foto5.jpg', title: 'Broadcast 05', tag: 'Broadcast Photo' },
-  { id: 'b_f6', type: 'image', src: '/Portofolio/b_foto6.jpg', title: 'Broadcast 06', tag: 'Broadcast Photo' },
-  { id: 'b_f7', type: 'image', src: '/Portofolio/b_foto7.jpg', title: 'Broadcast 07', tag: 'Broadcast Photo' },
-  { id: 'b_f8', type: 'image', src: '/Portofolio/b_foto8.jpg', title: 'Broadcast 08', tag: 'Broadcast Photo' },
-  { id: 'b_f9', type: 'image', src: '/Portofolio/b_foto9.jpg', title: 'Broadcast 09', tag: 'Broadcast Photo' },
-  { id: 'b_f10', type: 'image', src: '/Portofolio/b_foto10.jpg', title: 'Broadcast 10', tag: 'Broadcast Photo' },
-  { id: 'b_f11', type: 'image', src: '/Portofolio/b_foto11.jpg', title: 'Broadcast 11', tag: 'Broadcast Photo' },
-  { id: 'b_f12', type: 'image', src: '/Portofolio/b_foto12.jpg', title: 'Broadcast 12', tag: 'Broadcast Photo' },
-  { id: 'b_f13', type: 'image', src: '/Portofolio/b_foto13.jpg', title: 'Broadcast 13', tag: 'Broadcast Photo' },
+  { id: 'b_f3', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 1.jpeg', title: 'Broadcast Streaming Operator Project 1', tag: 'Broadcast Photo' },
+  { id: 'b_f4', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 2.jpeg', title: 'Broadcast Streaming Operator Project 2', tag: 'Broadcast Photo' },
+  { id: 'b_f5', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 5.jpeg', title: 'Broadcast Streaming Operator Project 5', tag: 'Broadcast Photo' },
+  { id: 'b_f6', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 6.jpeg', title: 'Broadcast Streaming Operator Project 6', tag: 'Broadcast Photo' },
+  { id: 'b_f7', type: 'image', src: '/Portofolio/Camera Operator at FISIP UGJ.jpeg', title: 'Camera Operator at FISIP UGJ', tag: 'Broadcast Photo' },
+  { id: 'b_f8', type: 'image', src: '/Portofolio/Camera Operator YBA & Cheng Hoo Events.jpeg', title: 'Camera Operator YBA & Cheng Hoo Events', tag: 'Broadcast Photo' },
+  { id: 'b_f9', type: 'image', src: '/Portofolio/Cheng Hoo Tournament 2025.jpeg', title: 'Cheng Hoo Tournament 2025', tag: 'Broadcast Photo' },
+  { id: 'b_f10', type: 'image', src: '/Portofolio/Cheng Hoo Tournament 2026.jpeg', title: 'Cheng Hoo Tournament 2026', tag: 'Broadcast Photo' },
+  { id: 'b_f11', type: 'image', src: '/Portofolio/Operator YBA dan Cheng Hoo.jpeg', title: 'Operator YBA dan Cheng Hoo', tag: 'Broadcast Photo' },
+  { id: 'b_f12', type: 'image', src: '/Portofolio/Project Cheng Hoo 2025.jpeg', title: 'Project Cheng Hoo 2025', tag: 'Broadcast Photo' },
+  { id: 'b_f13', type: 'image', src: '/Portofolio/Recording Crew at the State Building, Cirebon City.jpeg', title: 'Recording Crew at the State Building, Cirebon City', tag: 'Broadcast Photo' },
+  { id: 'b_f14', type: 'image', src: '/Portofolio/Surveillance Camera Operator Village Official Recruitment Examination.jpeg', title: 'Surveillance Camera Operator Village Official Recruitment Examination', tag: 'Broadcast Photo' },
 ];
 
 // =========================================
 // 2. DATABASE KARYA: KEGIATAN (5 Foto)
 // =========================================
 const kegiatanWorks = [
-  { id: 'k_f1', type: 'image', src: '/Portofolio/k_foto1.jpg', title: 'Kegiatan 01', tag: 'Kegiatan' },
-  { id: 'k_f2', type: 'image', src: '/Portofolio/k_foto2.jpg', title: 'Kegiatan 02', tag: 'Kegiatan' },
-  { id: 'k_f3', type: 'image', src: '/Portofolio/k_foto3.jpg', title: 'Kegiatan 03', tag: 'Kegiatan' },
-  { id: 'k_f4', type: 'image', src: '/Portofolio/k_foto4.jpg', title: 'Kegiatan 04', tag: 'Kegiatan' },
-  { id: 'k_f5', type: 'image', src: '/Portofolio/k_foto5.jpg', title: 'Kegiatan 05', tag: 'Kegiatan' },
+  { id: 'k_f1', type: 'image', src: '/Portofolio/Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters.jpeg', title: 'Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters', tag: 'Kegiatan' },
+  { id: 'k_f2', type: 'image', src: '/Portofolio/Benchmarking Visit to TRANS7.jpeg', title: 'Benchmarking Visit to TRANS7', tag: 'Kegiatan' },
+  { id: 'k_f3', type: 'image', src: '/Portofolio/Capacity Building Communication.jpeg', title: 'Capacity Building Communication', tag: 'Kegiatan' },
+  { id: 'k_f4', type: 'image', src: '/Portofolio/Internship at DISNAKERTRANS Kuningan Regency.jpeg', title: 'Internship at DISNAKERTRANS Kuningan Regency', tag: 'Kegiatan' },
+  { id: 'k_f5', type: 'image', src: '/Portofolio/Investor Relations Meeting.jpeg', title: 'Investor Relations Meeting', tag: 'Kegiatan' },
 ];
 
 // =========================================
 // 3. DATABASE KARYA: HASIL (6 Foto)
 // =========================================
 const hasilWorks = [
-  { id: 'h_f1', type: 'image', src: '/Portofolio/h_foto1.jpg', title: 'Hasil Karya 01', tag: 'Hasil' },
-  { id: 'h_f2', type: 'image', src: '/Portofolio/h_foto2.jpg', title: 'Hasil Karya 02', tag: 'Hasil' },
-  { id: 'h_f3', type: 'image', src: '/Portofolio/h_foto3.jpg', title: 'Hasil Karya 03', tag: 'Hasil' },
-  { id: 'h_f4', type: 'image', src: '/Portofolio/h_foto4.jpg', title: 'Hasil Karya 04', tag: 'Hasil' },
-  { id: 'h_f5', type: 'image', src: '/Portofolio/h_foto5.jpg', title: 'Hasil Karya 05', tag: 'Hasil' },
-  { id: 'h_f6', type: 'image', src: '/Portofolio/h_foto6.jpg', title: 'Hasil Karya 06', tag: 'Hasil' },
+  { id: 'h_f1', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 1.jpeg', title: 'Adobe Dimension Project Showcase Part 1', tag: 'Hasil' },
+  { id: 'h_f2', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 2.jpeg', title: 'Adobe Dimension Project Showcase Part 2', tag: 'Hasil' },
+  { id: 'h_f3', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 3.jpeg', title: 'Adobe Dimension Project Showcase Part 3', tag: 'Hasil' },
+  { id: 'h_f4', type: 'image', src: '/Portofolio/Color Grading with DaVinci Resolve Part 1.jpeg', title: 'Color Grading with DaVinci Resolve Part 1', tag: 'Hasil' },
+  { id: 'h_f5', type: 'image', src: '/Portofolio/Color Grading with DaVinci Resolve Part 2.jpeg', title: 'Color Grading with DaVinci Resolve Part 2', tag: 'Hasil' },
+  { id: 'h_f6', type: 'image', src: '/Portofolio/Photo Editing with Snapseed.jpeg', title: 'Photo Editing with Snapseed', tag: 'Hasil' },
 ];
 
 // Penggabungan Kategori untuk dirender di Carousel
@@ -62,6 +63,8 @@ const portfolioCategories = [
 ];
 
 export default function MattisPremiumPortfolio() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -264,7 +267,7 @@ export default function MattisPremiumPortfolio() {
               <div className="flex-1 border-t border-[#333]" />
             </div>
 
-            {/* Container Carousel Geser (Fluid Design) */}
+            {/* Container Carousel Geser (Fluid Design Tanpa Border Kaku) */}
             <motion.div 
               initial="hidden" 
               whileInView="visible" 
@@ -284,8 +287,8 @@ export default function MattisPremiumPortfolio() {
                     <span className="text-right">{work.tag}</span>
                   </div>
                   
-                  {/* Container Foto/Video Tanpa Garis Kaku */}
-                  <div className="relative w-full flex-1 overflow-hidden mb-6 bg-transparent">
+                  {/* Container Foto/Video Tanpa Garis Kaku (Menggunakan Object-Contain) */}
+                  <div className="relative w-full flex-1 overflow-hidden mb-6 bg-transparent flex items-center justify-center">
                     {work.type === 'image' ? (
                       <img 
                         src={work.src} 
@@ -303,7 +306,7 @@ export default function MattisPremiumPortfolio() {
                   </div>
 
                   {/* Judul Karya */}
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-[#555] group-hover:text-[#EAEAEA] transition-colors duration-500">
+                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-[#555] group-hover:text-[#EAEAEA] transition-colors duration-500 line-clamp-2">
                     {work.title}
                   </h3>
                 </div>
@@ -332,7 +335,7 @@ export default function MattisPremiumPortfolio() {
 
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex gap-12 mt-24 text-sm font-bold tracking-widest uppercase text-[#888]">
             <a href="https://instagram.com/mnalm_7/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/muhammad-zainal-muttaqin-1a85022b1/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
           </motion.div>
 
           <div className="w-full border-t border-[#1A1A1A] mt-24 pt-8 flex justify-between text-xs font-bold tracking-widest uppercase text-[#555]">
