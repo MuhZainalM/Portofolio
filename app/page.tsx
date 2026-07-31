@@ -135,7 +135,7 @@ export default function MattisPremiumPortfolio() {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mt-16 border-t border-[#1A1A1A] pt-12">
             <motion.div variants={fadeUp} className="md:col-span-6 text-lg md:text-xl text-[#A0A0A0] leading-relaxed uppercase font-medium">
-              We align strategy, broadcast production, and cinematic engineering into a single high-performance loop. Your vision, executed with surgical precision.
+              I create visual experiences through broadcast, cinematography and post-production where every frame is created with precision, clarity and purpose.
             </motion.div>
             
             <motion.div variants={fadeUp} className="md:col-span-3 md:col-start-10 flex flex-col gap-4 uppercase tracking-widest font-bold text-sm">
@@ -166,11 +166,11 @@ export default function MattisPremiumPortfolio() {
       <section id="about" className="w-full px-4 md:px-8 py-32 bg-[#FF3333] text-[#050505] border-y border-[#1A1A1A]">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="md:col-span-7 text-[12vw] md:text-[8vw] font-black leading-[0.85] tracking-tighter uppercase">
-            STRATEGY<br />BEFORE<br />PIXELS.
+            STORIES<br />BEFORE<br />SHOTS.
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="md:col-span-5 flex flex-col justify-end text-lg md:text-2xl font-bold leading-tight uppercase">
             <p className="mb-12">
-              People decide if they trust your visual content before they hear a word of it. That&apos;s not a metaphor. Visual credibility forms almost instantly.
+              Every production starts with understanding the story behind it. My role is to transform those stories into visuals that are technically refined, emotionally engaging, and created for today's digital audience.
             </p>
             <div className="w-full md:w-64 aspect-[3/4] relative border-2 border-[#050505] overflow-hidden group">
                <img src="/Portofolio/MUHAMMAD_ZAINAL_MUTTAQIN_122100107_FOTO_BG_BIRU.png" alt="Zainal" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 group-hover:scale-105" />
