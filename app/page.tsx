@@ -108,6 +108,7 @@ export default function MattisPremiumPortfolio() {
           <a href="#about" className="hover:text-[#FF3333] transition-colors">About</a>
           <a href="#works" className="hover:text-[#FF3333] transition-colors">Works</a>
           <a href="#services" className="hover:text-[#FF3333] transition-colors">Services</a>
+          <a href="#skills" className="hover:text-[#FF3333] transition-colors">Skills</a>
           <a href="#contact" className="hover:text-[#FF3333] transition-colors">Contact</a>
         </div>
       </nav>
@@ -240,7 +241,70 @@ export default function MattisPremiumPortfolio() {
           </motion.div>
         </div>
       </section>
+{/* =========================================
+          5.5 SKILLS & TOOLS
+      ========================================= */}
+      <section id="skills" className="w-full px-4 md:px-8 py-32 border-b border-[#1A1A1A] bg-[#050505]">
+        <div className="max-w-[1400px] mx-auto">
+          
+          {/* Header Section */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-16">
+            <h2 className="text-sm font-bold tracking-widest uppercase text-[#FF3333] mb-4">Capabilities</h2>
+            <h3 className="text-[10vw] md:text-[6vw] font-black leading-none tracking-tighter uppercase">
+              Skills &<br />Arsenal.
+            </h3>
+          </motion.div>
 
+          {/* Grid 3 Kolom */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 border-t border-[#1A1A1A] pt-16">
+            
+            {/* Kolom 1: Hard Skills */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
+                Hard Skills <span className="text-[#FF3333]">+</span>
+              </h4>
+              <ul className="flex flex-col gap-4 text-[#A0A0A0] font-medium uppercase tracking-wide text-sm">
+                <li className="hover:text-[#EAEAEA] transition-colors">Live Broadcasting</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Cinematic Videography</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Multi-Camera Setup & Switching</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Video Editing & Montage</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Color Grading</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Audio Syncing & Mixing</li>
+              </ul>
+            </motion.div>
+
+            {/* Kolom 2: Soft Skills */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
+                Soft Skills <span className="text-[#FF3333]">+</span>
+              </h4>
+              <ul className="flex flex-col gap-4 text-[#A0A0A0] font-medium uppercase tracking-wide text-sm">
+                <li className="hover:text-[#EAEAEA] transition-colors">Creative Problem Solving</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Team Leadership & Direction</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Time Management</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Adaptability Under Pressure</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Effective Communication</li>
+                <li className="hover:text-[#EAEAEA] transition-colors">Attention to Detail</li>
+              </ul>
+            </motion.div>
+
+            {/* Kolom 3: Tools / Software */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
+                Software & Tools <span className="text-[#FF3333]">+</span>
+              </h4>
+              <div className="flex flex-wrap gap-3">
+                {['vMix', 'OBS Studio', 'Premiere Pro', 'DaVinci Resolve', 'After Effects', 'Adobe Dimension', 'Snapseed', 'Lightroom'].map((tool, idx) => (
+                  <span key={idx} className="border border-[#333] text-[#888] px-4 py-2 text-xs font-bold tracking-widest uppercase hover:border-[#FF3333] hover:text-[#FF3333] transition-colors cursor-default">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
       {/* =========================================
           6. SELECTED WORKS (FLUID PREMIUM CAROUSELS)
       ========================================= */}
