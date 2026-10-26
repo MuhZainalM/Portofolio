@@ -7,15 +7,13 @@ import { useEffect, useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 // =========================================
-// 1. DATABASE KARYA: BROADCAST (13 Foto, 4 Video)
+// 1. DATABASE KARYA: BROADCAST
 // =========================================
 const broadcastWorks = [
-  // 4 VIDEO
   { id: 'b_v1', type: 'video', src: '/Portofolio/streaming.mp4', title: 'Live Streaming 1', tag: 'Broadcast Video' },
   { id: 'b_v2', type: 'video', src: '/Portofolio/Editor & Assistant Director Short Film Project.mp4', title: 'Editor & Assistant Director Short Film Project', tag: 'Broadcast Video' },
   { id: 'b_v3', type: 'video', src: '/Portofolio/Broadcast Streaming Operator Project 3.mp4', title: 'Broadcast Streaming Operator Project 3', tag: 'Broadcast Video' },
   { id: 'b_v4', type: 'video', src: '/Portofolio/Broadcast Streaming Operator Project 4.mp4', title: 'Broadcast Streaming Operator Project 4', tag: 'Broadcast Video' },
-  // 13 FOTO
   { id: 'b_f1', type: 'image', src: '/Portofolio/utv.jpeg', title: 'UGJ TV Live', tag: 'Broadcast Photo' },
   { id: 'b_f2', type: 'image', src: '/Portofolio/summer.jpeg', title: 'Cheng Hoo Cup', tag: 'Broadcast Photo' },
   { id: 'b_f3', type: 'image', src: '/Portofolio/Broadcast Streaming Operator Project 1.jpeg', title: 'Broadcast Streaming Operator Project 1', tag: 'Broadcast Photo' },
@@ -32,9 +30,6 @@ const broadcastWorks = [
   { id: 'b_f14', type: 'image', src: '/Portofolio/Surveillance Camera Operator Village Official Recruitment Examination.jpeg', title: 'Surveillance Camera Operator Village Official Recruitment Examination', tag: 'Broadcast Photo' },
 ];
 
-// =========================================
-// 2. DATABASE KARYA: KEGIATAN (5 Foto)
-// =========================================
 const kegiatanWorks = [
   { id: 'k_f1', type: 'image', src: '/Portofolio/Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters.jpeg', title: 'Benchmarking Visit to the Indonesian Broadcasting Commission (KPI) Headquarters', tag: 'Kegiatan' },
   { id: 'k_f2', type: 'image', src: '/Portofolio/Benchmarking Visit to TRANS7.jpeg', title: 'Benchmarking Visit to TRANS7', tag: 'Kegiatan' },
@@ -43,9 +38,6 @@ const kegiatanWorks = [
   { id: 'k_f5', type: 'image', src: '/Portofolio/Investor Relations Meeting.jpeg', title: 'Investor Relations Meeting', tag: 'Kegiatan' },
 ];
 
-// =========================================
-// 3. DATABASE KARYA: HASIL (6 Foto)
-// =========================================
 const hasilWorks = [
   { id: 'h_f1', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 1.jpeg', title: 'Adobe Dimension Project Showcase Part 1', tag: 'Hasil' },
   { id: 'h_f2', type: 'image', src: '/Portofolio/Adobe Dimension Project Showcase Part 2.jpeg', title: 'Adobe Dimension Project Showcase Part 2', tag: 'Hasil' },
@@ -55,7 +47,6 @@ const hasilWorks = [
   { id: 'h_f6', type: 'image', src: '/Portofolio/Photo Editing with Snapseed.jpeg', title: 'Photo Editing with Snapseed', tag: 'Hasil' },
 ];
 
-// Penggabungan Kategori untuk dirender di Carousel
 const portfolioCategories = [
   { title: "BROADCAST", items: broadcastWorks },
   { title: "KEGIATAN", items: kegiatanWorks },
@@ -63,8 +54,7 @@ const portfolioCategories = [
 ];
 
 export default function MattisPremiumPortfolio() {
-  const [activeFaq, setActiveFaq] = useState<number | null>(null);
-
+  // Efek scroll halus (smooth scroll) saat menu diklik
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -217,198 +207,3 @@ export default function MattisPremiumPortfolio() {
             </h3>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="md:col-span-7">
-            <div className="border-t border-[#333] py-8 flex flex-col md:flex-row gap-8 hover:bg-[#111] transition-colors px-4 cursor-pointer">
-              <div className="text-[#888] font-mono">01</div>
-              <div className="flex-1">
-                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4 flex justify-between">Live Broadcasting <span className="text-[#FF3333] font-light">+</span></h4>
-                <p className="text-[#A0A0A0] leading-relaxed">Multi-camera setup, live switching, and seamless streaming for sports, corporate events, and university productions. Ensuring zero downtime and maximum engagement.</p>
-              </div>
-            </div>
-            <div className="border-t border-[#333] py-8 flex flex-col md:flex-row gap-8 hover:bg-[#111] transition-colors px-4 cursor-pointer">
-              <div className="text-[#888] font-mono">02</div>
-              <div className="flex-1">
-                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4 flex justify-between">Cinematic Videography <span className="text-[#FF3333] font-light">+</span></h4>
-                <p className="text-[#A0A0A0] leading-relaxed">High-end camera operation focusing on composition, lighting, and movement to tell a compelling story for documentaries or commercials.</p>
-              </div>
-            </div>
-            <div className="border-y border-[#333] py-8 flex flex-col md:flex-row gap-8 hover:bg-[#111] transition-colors px-4 cursor-pointer">
-              <div className="text-[#888] font-mono">03</div>
-              <div className="flex-1">
-                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4 flex justify-between">Post-Production <span className="text-[#FF3333] font-light">+</span></h4>
-                <p className="text-[#A0A0A0] leading-relaxed">Advanced video editing, color grading, and audio syncing to transform raw footage into a polished, broadcast-ready masterpiece.</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-{/* =========================================
-          5.5 SKILLS & TOOLS
-      ========================================= */}
-      <section id="skills" className="w-full px-4 md:px-8 py-32 border-b border-[#1A1A1A] bg-[#050505]">
-        <div className="max-w-[1400px] mx-auto">
-          
-          {/* Header Section */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-16">
-            <h2 className="text-sm font-bold tracking-widest uppercase text-[#FF3333] mb-4">Capabilities</h2>
-            <h3 className="text-[10vw] md:text-[6vw] font-black leading-none tracking-tighter uppercase">
-              Skills &<br />Arsenal.
-            </h3>
-          </motion.div>
-
-          {/* Grid 3 Kolom */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 border-t border-[#1A1A1A] pt-16">
-            
-            {/* Kolom 1: Hard Skills */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
-                Hard Skills <span className="text-[#FF3333]">+</span>
-              </h4>
-              <ul className="flex flex-col gap-4 text-[#A0A0A0] font-medium uppercase tracking-wide text-sm">
-                <li className="hover:text-[#EAEAEA] transition-colors">Live Broadcasting</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Cinematic Videography</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Multi-Camera Setup & Switching</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Video Editing & Montage</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Color Grading</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Audio Syncing & Mixing</li>
-              </ul>
-            </motion.div>
-
-            {/* Kolom 2: Soft Skills */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
-                Soft Skills <span className="text-[#FF3333]">+</span>
-              </h4>
-              <ul className="flex flex-col gap-4 text-[#A0A0A0] font-medium uppercase tracking-wide text-sm">
-                <li className="hover:text-[#EAEAEA] transition-colors">Creative Problem Solving</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Team Leadership & Direction</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Time Management</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Adaptability Under Pressure</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Effective Communication</li>
-                <li className="hover:text-[#EAEAEA] transition-colors">Attention to Detail</li>
-              </ul>
-            </motion.div>
-
-            {/* Kolom 3: Tools / Software */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
-                Software & Tools <span className="text-[#FF3333]">+</span>
-              </h4>
-              <div className="flex flex-wrap gap-3">
-                {['vMix', 'OBS Studio', 'Premiere Pro', 'DaVinci Resolve', 'After Effects', 'Adobe Dimension', 'Snapseed', 'Lightroom'].map((tool, idx) => (
-                  <span key={idx} className="border border-[#333] text-[#888] px-4 py-2 text-xs font-bold tracking-widest uppercase hover:border-[#FF3333] hover:text-[#FF3333] transition-colors cursor-default">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
-      {/* =========================================
-          6. SELECTED WORKS (FLUID PREMIUM CAROUSELS)
-      ========================================= */}
-      <section id="works" className="w-full py-32 border-b border-[#1A1A1A] overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-24">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex flex-col md:flex-row justify-between items-end gap-6">
-            <h2 className="text-[10vw] md:text-[7vw] font-black leading-none tracking-tighter uppercase">
-              SELECTED<br />WORKS.
-            </h2>
-            <p className="text-[#FF3333] text-sm font-bold tracking-widest uppercase animate-pulse">
-              Scroll to explore ➜
-            </p>
-          </motion.div>
-        </div>
-
-        {/* LOOPING UNTUK MEMBUAT 3 CAROUSEL (BROADCAST, KEGIATAN, HASIL) */}
-        {portfolioCategories.map((category, catIndex) => (
-          <div key={catIndex} className="mb-32 last:mb-0">
-            {/* Judul Kategori */}
-            <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-12 flex items-center gap-6">
-              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-widest text-[#EAEAEA]">
-                / {category.title}
-              </h3>
-              <div className="flex-1 border-t border-[#333]" />
-            </div>
-
-            {/* Container Carousel Geser (Fluid Design Tanpa Border Kaku) */}
-            <motion.div 
-              initial="hidden" 
-              whileInView="visible" 
-              viewport={{ once: true }} 
-              variants={fadeUp}
-              className="flex overflow-x-auto snap-x snap-mandatory gap-8 px-4 md:px-8 pb-4 scroll-smooth"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {category.items.map((work, index) => (
-                <div 
-                  key={work.id} 
-                  className="snap-center shrink-0 w-[85vw] md:w-[45vw] lg:w-[35vw] h-[55vh] md:h-[65vh] flex flex-col justify-between group cursor-pointer"
-                >
-                  {/* Header Teks */}
-                  <div className="flex justify-between items-start text-xs font-bold tracking-widest uppercase text-[#555] mb-4 group-hover:text-[#FF3333] transition-colors duration-500">
-                    <span>({String(index + 1).padStart(2, '0')})</span>
-                    <span className="text-right">{work.tag}</span>
-                  </div>
-                  
-                  {/* Container Foto/Video Tanpa Garis Kaku (Menggunakan Object-Contain) */}
-                  <div className="relative w-full flex-1 overflow-hidden mb-6 bg-transparent flex items-center justify-center">
-                    {work.type === 'image' ? (
-                      <img 
-                        src={work.src} 
-                        alt={work.title} 
-                        className="w-full h-full object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" 
-                      />
-                    ) : (
-                      <video 
-                        src={work.src} 
-                        className="w-full h-full object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" 
-                        controls 
-                        preload="metadata"
-                      />
-                    )}
-                  </div>
-
-                  {/* Judul Karya */}
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-[#555] group-hover:text-[#EAEAEA] transition-colors duration-500 line-clamp-2">
-                    {work.title}
-                  </h3>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        ))}
-      </section>
-
-      {/* =========================================
-          7. FOOTER / CONTACT
-      ========================================= */}
-      <section id="contact" className="w-full px-4 md:px-8 py-32 bg-[#020202]">
-        <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="w-16 h-16 bg-[#FF3333] rounded-full mb-12 animate-bounce flex items-center justify-center text-black">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-          </motion.div>
-
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-sm font-bold tracking-[0.3em] uppercase text-[#888] mb-8">
-            Start a Project
-          </motion.div>
-          
-          <motion.a href="mailto:jenalstudio@gmail.com" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-[8vw] md:text-[6vw] font-black tracking-tighter uppercase hover:text-[#FF3333] transition-colors duration-300">
-            JENALSTUDIO<br/>@GMAIL.COM
-          </motion.a>
-
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex gap-12 mt-24 text-sm font-bold tracking-widest uppercase text-[#888]">
-            <a href="https://instagram.com/mnalm_7/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            <a href="https://www.linkedin.com/in/muhammad-zainal-muttaqin-1a85022b1/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-          </motion.div>
-
-          <div className="w-full border-t border-[#1A1A1A] mt-24 pt-8 flex justify-between text-xs font-bold tracking-widest uppercase text-[#555]">
-            <span>© {new Date().getFullYear()} MUHAMMAD ZAINAL MUTTAQIN</span>
-            <span>BASED IN INDONESIA</span>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  );
-}
