@@ -219,7 +219,9 @@ export default function MattisPremiumPortfolio() {
         </div>
       </section>
 
-      {/* 5.5 SKILLS & TOOLS */}
+     {/* =========================================
+          5.5 SKILLS & TOOLS
+      ========================================= */}
       <section id="skills" className="w-full px-4 md:px-8 py-32 border-b border-[#1A1A1A] bg-[#050505]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-16">
@@ -230,10 +232,12 @@ export default function MattisPremiumPortfolio() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12 border-t border-[#1A1A1A] pt-16">
+            {/* 1. Hardskills */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
-                Hard Skills <span className="text-[#FF3333]">+</span>
+              <h4 className="text-xl font-bold uppercase tracking-widest mb-4 flex justify-between border-b border-[#333] pb-4">
+                Hardskills <span className="text-[#FF3333]">+</span>
               </h4>
+              <p className="text-xs text-[#888] uppercase tracking-wider mb-6">Kemampuan teknis yang kamu miliki.</p>
               <ul className="flex flex-wrap gap-2 text-[#A0A0A0] font-medium uppercase tracking-wide text-xs">
                 {[
                   'Broadcasting Production', 'Camera Operation', 'Live Streaming Operation', 
@@ -249,10 +253,12 @@ export default function MattisPremiumPortfolio() {
               </ul>
             </motion.div>
 
+            {/* 2. Softskills */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
-                Soft Skills <span className="text-[#FF3333]">+</span>
+              <h4 className="text-xl font-bold uppercase tracking-widest mb-4 flex justify-between border-b border-[#333] pb-4">
+                Softskills <span className="text-[#FF3333]">+</span>
               </h4>
+              <p className="text-xs text-[#888] uppercase tracking-wider mb-6">Kemampuan interpersonal dan cara kamu bekerja.</p>
               <ul className="flex flex-wrap gap-2 text-[#A0A0A0] font-medium uppercase tracking-wide text-xs">
                 {[
                   'Communication Skills', 'Teamwork', 'Team Coordination', 'Problem Solving', 
@@ -267,10 +273,12 @@ export default function MattisPremiumPortfolio() {
               </ul>
             </motion.div>
 
+            {/* 3. Tools */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <h4 className="text-xl font-bold uppercase tracking-widest mb-8 flex justify-between border-b border-[#333] pb-4">
-                Software & Tools <span className="text-[#FF3333]">+</span>
+              <h4 className="text-xl font-bold uppercase tracking-widest mb-4 flex justify-between border-b border-[#333] pb-4">
+                Tools <span className="text-[#FF3333]">+</span>
               </h4>
+              <p className="text-xs text-[#888] uppercase tracking-wider mb-6">Perangkat lunak dan aplikasi yang kamu gunakan.</p>
               <div className="flex flex-wrap gap-3">
                 {[
                   { name: 'vMix', icon: '/Portofolio/vmix.png' },
